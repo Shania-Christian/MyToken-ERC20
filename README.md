@@ -1,11 +1,11 @@
 # MyToken-ERC20
 
-📜 Description
+# 📜 Description
 MyToken (MTK) is an Ethereum-based ERC-20 token designed with enhanced security features and administrative controls. This smart contract follows the ERC-20 token standard while incorporating additional functionalities like pausing transactions, blacklisting addresses, freezing accounts, and ownership transfer.
 
 The contract is built in Solidity (0.8.20) and can be deployed on Ethereum or any EVM-compatible blockchain.
 
-🚀 Features
+# 🚀 Features
 ✅ Standard ERC-20 Functions – Transfer, Approve, Allowance, etc.
 ✅ Minting & Burning – Owner can create or destroy tokens as needed
 ✅ Account Freezing – Prevents specific accounts from transacting
