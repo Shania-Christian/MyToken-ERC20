@@ -1,23 +1,40 @@
-# MyToken-ERC20
+# MyToken (MTK) - ERC-20 Smart Contract
 
-# 📜 Description
-MyToken (MTK) is an Ethereum-based ERC-20 token designed with enhanced security features and administrative controls. This smart contract follows the ERC-20 token standard while incorporating additional functionalities like pausing transactions, blacklisting addresses, freezing accounts, and ownership transfer.
+## 📌 Overview
+**MyToken (MTK)** is an ERC-20 token implemented in Solidity. It includes additional security features like account freezing, blacklisting, and a pause mechanism. This token is designed to be used for decentralized applications (dApps), tokenized assets, and general blockchain-based transactions.
 
-The contract is built in Solidity (0.8.20) and can be deployed on Ethereum or any EVM-compatible blockchain.
+## 🚀 Features
+- ✅ **ERC-20 Standard Compliance** (transfer, approval, allowance)
+- ✅ **Minting & Burning** (Controlled supply management)
+- ✅ **Pausing Token Transfers** (Owner can pause/unpause transactions)
+- ✅ **Blacklisting & Freezing** (Restrict malicious accounts)
+- ✅ **Ownership Transfer** (Admin can transfer ownership)
 
-# 🚀 Features
-✅ Standard ERC-20 Functions – Transfer, Approve, Allowance, etc.
-✅ Minting & Burning – Owner can create or destroy tokens as needed
-✅ Account Freezing – Prevents specific accounts from transacting
-✅ Blacklist Functionality – Blocks malicious actors from using tokens
-✅ Pause & Unpause Transfers – Temporarily stops all token transfers
-✅ Ownership Transfer – Enables safe handover of contract ownership
+## 🛠️ Technologies Used
+- **Solidity** (`^0.8.20`)
+- **Ethereum Blockchain**
 
-# ⚙️ Smart Contract Implementation
-The contract implements the IERC20 interface and includes:
+## 📄 Smart Contract Code
+The Solidity contract implements standard ERC-20 functions along with enhanced security features:
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
--> Mapping for token balances and allowances
--> Events for Transfer and Approval
--> Modifiers for access control (onlyOwner, notPaused)
--> Functions for safe token transfer, approval, minting, and burning
--> Security Enhancements: Blacklisting, Freezing, and Emergency Pause
+contract MyToken {
+    string public name = "MyToken";
+    string public symbol = "MTK";
+    uint8 public decimals = 18;
+    uint256 public totalSupply;
+    address public owner;
+    
+    mapping(address => uint256) public balanceOf;
+    
+    constructor() {
+        owner = msg.sender;
+        totalSupply = 1_000_000 * (10 ** uint256(decimals));
+        balanceOf[owner] = totalSupply;
+    }
+}
+```
+
+
